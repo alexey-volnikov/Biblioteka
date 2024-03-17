@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class MineViewController: UICollectionViewController {
     
     private let bookData = BookDataManager.shared
     
-    var randomBookURL: URL? {
+    var randomBookURL: URL! {
         guard let randomSubject = bookData.subjects.randomElement() else {
             return nil
         }
@@ -20,18 +20,11 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchRandomBooks()
+        fetchBooks()
     }
-}
-
-extension ViewController {
-    func fetchRandomBooks() {
-        guard let url = randomBookURL else {
-            print("Invalid URL")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { [unowned self] data, response, error in
+    
+    private func fetchBooks() {
+        URLSession.shared.dataTask(with: randomBookURL) { data, _, error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
                 return
