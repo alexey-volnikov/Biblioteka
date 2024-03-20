@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A29B88ED2BA5BB880060A3EF /* HW32.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW32.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A29B88ED2BA5BB880060A3EF /* Biblioteka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biblioteka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29B88F02BA5BB880060A3EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A29B88F22BA5BB880060A3EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A29B88F42BA5BB880060A3EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		A29B88E42BA5BB880060A3EF = {
 			isa = PBXGroup;
 			children = (
-				A29B88EF2BA5BB880060A3EF /* HW32 */,
+				A29B88EF2BA5BB880060A3EF /* Biblioteka */,
 				A29B88EE2BA5BB880060A3EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		A29B88EE2BA5BB880060A3EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A29B88ED2BA5BB880060A3EF /* HW32.app */,
+				A29B88ED2BA5BB880060A3EF /* Biblioteka.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A29B88EF2BA5BB880060A3EF /* HW32 */ = {
+		A29B88EF2BA5BB880060A3EF /* Biblioteka */ = {
 			isa = PBXGroup;
 			children = (
 				A29B890C2BA5BE430060A3EF /* Services */,
@@ -69,7 +69,7 @@
 				A29B89052BA5BBBA0060A3EF /* Storyboards */,
 				A29B88F92BA5BB8D0060A3EF /* Assets.xcassets */,
 			);
-			path = HW32;
+			path = Biblioteka;
 			sourceTree = "<group>";
 		};
 		A29B89042BA5BBA70060A3EF /* ViewContollers */ = {
@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A29B88EC2BA5BB880060A3EF /* HW32 */ = {
+		A29B88EC2BA5BB880060A3EF /* Biblioteka */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A29B89012BA5BB8D0060A3EF /* Build configuration list for PBXNativeTarget "HW32" */;
+			buildConfigurationList = A29B89012BA5BB8D0060A3EF /* Build configuration list for PBXNativeTarget "Biblioteka" */;
 			buildPhases = (
 				A29B88E92BA5BB880060A3EF /* Sources */,
 				A29B88EA2BA5BB880060A3EF /* Frameworks */,
@@ -131,9 +131,9 @@
 			);
 			dependencies = (
 			);
-			name = HW32;
+			name = Biblioteka;
 			productName = HW32;
-			productReference = A29B88ED2BA5BB880060A3EF /* HW32.app */;
+			productReference = A29B88ED2BA5BB880060A3EF /* Biblioteka.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -151,7 +151,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A29B88E82BA5BB880060A3EF /* Build configuration list for PBXProject "HW32" */;
+			buildConfigurationList = A29B88E82BA5BB880060A3EF /* Build configuration list for PBXProject "Biblioteka" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A29B88EC2BA5BB880060A3EF /* HW32 */,
+				A29B88EC2BA5BB880060A3EF /* Biblioteka */,
 			);
 		};
 /* End PBXProject section */
@@ -404,7 +404,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A29B88E82BA5BB880060A3EF /* Build configuration list for PBXProject "HW32" */ = {
+		A29B88E82BA5BB880060A3EF /* Build configuration list for PBXProject "Biblioteka" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A29B88FF2BA5BB8D0060A3EF /* Debug */,
@@ -413,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A29B89012BA5BB8D0060A3EF /* Build configuration list for PBXNativeTarget "HW32" */ = {
+		A29B89012BA5BB8D0060A3EF /* Build configuration list for PBXNativeTarget "Biblioteka" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A29B89022BA5BB8D0060A3EF /* Debug */,
