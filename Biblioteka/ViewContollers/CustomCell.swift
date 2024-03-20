@@ -9,7 +9,7 @@ import UIKit
 
 final class CustomCell: UICollectionViewCell { 
     @IBOutlet var bookCover: UIImageView!
-    @IBOutlet var bookTitle: String!
-    @IBOutlet var bookAuthor: String!
+    @IBOutlet var bookTitle: UILabel!
+    @IBOutlet var bookAuthor: UILabel!
 }
 
