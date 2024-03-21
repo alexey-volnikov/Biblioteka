@@ -1,6 +1,6 @@
 //
 //  Book.swift
-//  HW32
+//  Biblioteka
 //
 //  Created by Алексей Вольников on 16.03.2024.
 //

@@ -7,23 +7,21 @@
 
 import Foundation
 
-private let apiKey = "AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI"
+// apiKey = "AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI"
 
 
 enum Link {
     case apiUrl
-    
+
     var url: URL {
         switch self {
         case .apiUrl:
-            guard let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=subject:russian&maxResults=10&key=\(apiKey)") else {
-                fatalError("Невозможно создать URL")
-            }
-            return url
+            return URL(string: "https://www.googleapis.com/books/v1/volumes?q=subject:russian&maxResults=10&key=AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI")!
         }
     }
-
 }
+
+
 enum NetworkError: Error {
     case invalidURL
     case noData
@@ -48,7 +46,7 @@ final class NetworkManager {
         }
     }
     
-    func fetch(from url: URL, completion: @escaping(Result<BookResults, NetworkError>) -> Void) {
+    func fetchBook(from url: URL, completion: @escaping(Result<BookResults, NetworkError>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
