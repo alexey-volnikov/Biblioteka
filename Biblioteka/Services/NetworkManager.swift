@@ -7,32 +7,21 @@
 
 import Foundation
 
-// apiKey = "AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI"
-
-
-enum Link {
-    case apiUrl
-
-    var url: URL {
-        switch self {
-        case .apiUrl:
-            return URL(string: "https://www.googleapis.com/books/v1/volumes?q=subject:russian&maxResults=10&key=AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI")!
-        }
-    }
-}
-
-
-enum NetworkError: Error {
-    case invalidURL
-    case noData
-    case decodingError
-}
-
 final class NetworkManager {
     
     static let shared = NetworkManager()
     
+    
     private init() {}
+    
+    enum NetworkError: Error {
+        case invalidURL
+        case noData
+        case decodingError
+    }
+    // apiKey = "AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI"
+    
+    let apiURL: URL = URL(string:"https://www.googleapis.com/books/v1/volumes?q=subject:philosophy&maxResults=30&key=AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI")!
     
     func fetchImage(from url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
         DispatchQueue.global().async {
@@ -65,7 +54,7 @@ final class NetworkManager {
                 print("Ошибка декодирования: \(error)")
                 completion(.failure(.decodingError))
             }
-
+            
             
         }.resume()
     }
