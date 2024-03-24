@@ -21,11 +21,15 @@ struct VolumeInfo: Decodable {
     let authors: [String]
     let imageLinks: ImageLinks?
     let description: String
-    
+    let pageCount: Int
+    let publisher: String
     var detalsDescription: String {
+        
         """
     Title: \(title)
     Autors: \(authors.joined(separator: ", "))
+    Page cout: \(pageCount)
+    Publisher: \(publisher)
     Description: \(description)
     """
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 final class NetworkManager {
     
@@ -17,45 +18,36 @@ final class NetworkManager {
         case invalidURL
         case noData
         case decodingError
+        case requestFailed(AFError)
     }
 
-    func fetchImage(from url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else {
-                completion(.failure(.noData))
-                return
-            }
-            DispatchQueue.main.async {
-                completion(.success(imageData))
-            }
-        }
-    }
-    
-    func fetchBook(from url: URL, completion: @escaping(Result<BookResults, NetworkError>) -> Void) {
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                completion(.failure(.noData))
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let dataModel = try decoder.decode(BookResults.self, from: data)
-                
-                DispatchQueue.main.async {
-                    completion(.success(dataModel))
+    func fetchImage(from url: URL, completion: @escaping(Result<Data, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
-            } catch {
-                print("Ошибка декодирования: \(error)")
-                completion(.failure(.decodingError))
             }
-            
-            
-        }.resume()
     }
     
+    func fetchBook(from url: URL, completion: @escaping(Result<BookResults, AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseDecodable(of: BookResults.self) { response in
+                switch response.result {
+                case .success(let bookResults):
+                    completion(.success(bookResults))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+    }
 }
+
 // MARK: - APIEndpoint
 extension NetworkManager {
     
@@ -67,7 +59,7 @@ extension NetworkManager {
         var url: URL {
             switch self {
             case .baseURL:
-                return URL(string: "https://www.googleapis.com/books/v1/volumes?q=subject:philosophy&maxResults=30&key=AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI")!
+                return URL(string: "https://www.googleapis.com/books/v1/volumes?q=subject:philosophy&maxResults=35&key=AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI")!
             }
         }
     }
