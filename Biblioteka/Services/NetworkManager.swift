@@ -11,7 +11,6 @@ final class NetworkManager {
     
     static let shared = NetworkManager()
     
-    
     private init() {}
     
     enum NetworkError: Error {
@@ -19,10 +18,7 @@ final class NetworkManager {
         case noData
         case decodingError
     }
-    // apiKey = "AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI"
-    
-    let apiURL: URL = URL(string:"https://www.googleapis.com/books/v1/volumes?q=subject:philosophy&maxResults=30&key=AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI")!
-    
+
     func fetchImage(from url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
         DispatchQueue.global().async {
             guard let imageData = try? Data(contentsOf: url) else {
@@ -59,4 +55,20 @@ final class NetworkManager {
         }.resume()
     }
     
+}
+// MARK: - APIEndpoint
+extension NetworkManager {
+    
+    // apiKey = "AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI"
+    
+    enum APIEndpoint {
+        case baseURL
+        
+        var url: URL {
+            switch self {
+            case .baseURL:
+                return URL(string: "https://www.googleapis.com/books/v1/volumes?q=subject:philosophy&maxResults=30&key=AIzaSyCjwQHkYSsb1hC5RqecY9yymhvcVN5beiI")!
+            }
+        }
+    }
 }

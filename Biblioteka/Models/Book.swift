@@ -20,9 +20,18 @@ struct VolumeInfo: Decodable {
     let title: String
     let authors: [String]
     let imageLinks: ImageLinks?
+    let description: String
+    
+    var detalsDescription: String {
+        """
+    Title: \(title)
+    Autors: \(authors.joined(separator: ", "))
+    Description: \(description)
+    """
+    }
 }
 
 struct ImageLinks: Decodable {
-    let smallThumbnail: String? // миниатюра
-    let thumbnail: String? // большая
+    let smallThumbnail: String?
+    let thumbnail: String?
 }

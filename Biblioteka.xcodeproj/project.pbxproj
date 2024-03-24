@@ -16,6 +16,7 @@
 		A29B89082BA5BC500060A3EF /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29B89072BA5BC500060A3EF /* Book.swift */; };
 		A2D418A42BA75F85002E6ADC /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D418A32BA75F85002E6ADC /* CustomCell.swift */; };
 		A2E55D822BAB175600082EE8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E55D812BAB175600082EE8 /* NetworkManager.swift */; };
+		A2EC22262BB0521000E6C295 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EC22252BB0521000E6C295 /* BookDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A29B89072BA5BC500060A3EF /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		A2D418A32BA75F85002E6ADC /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A2E55D812BAB175600082EE8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A2EC22252BB0521000E6C295 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				A29B88F42BA5BB880060A3EF /* MainViewController.swift */,
 				A2D418A32BA75F85002E6ADC /* CustomCell.swift */,
+				A2EC22252BB0521000E6C295 /* BookDetailsViewController.swift */,
 			);
 			path = ViewContollers;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				A29B88F52BA5BB880060A3EF /* MainViewController.swift in Sources */,
 				A29B88F12BA5BB880060A3EF /* AppDelegate.swift in Sources */,
 				A2E55D822BAB175600082EE8 /* NetworkManager.swift in Sources */,
+				A2EC22262BB0521000E6C295 /* BookDetailsViewController.swift in Sources */,
 				A2D418A42BA75F85002E6ADC /* CustomCell.swift in Sources */,
 				A29B88F32BA5BB880060A3EF /* SceneDelegate.swift in Sources */,
 			);

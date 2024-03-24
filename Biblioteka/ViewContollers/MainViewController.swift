@@ -26,11 +26,20 @@ final class MainViewController: UICollectionViewController {
         fetchBooks()
     }
     
-    // MARK: - Private Methods
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPaths = collectionView.indexPathsForSelectedItems, let indexPath = indexPaths.first else { return }
+        guard let bookDetailsVC = segue.destination as? BookDetailsViewController else { return }
+        let selectedBook = books[indexPath.row]
+        bookDetailsVC.book = selectedBook
+    }
+
     
+    // MARK: - Private Methods
     private func fetchBooks() {
         let networkManager = NetworkManager.shared
-        networkManager.fetchBook(from: networkManager.apiURL ) { [unowned self] result in
+        let url = NetworkManager.APIEndpoint.baseURL.url
+        networkManager.fetchBook(from: url) { [unowned self] result in
             switch result {
             case .success(let bookResults):
                 DispatchQueue.main.async {

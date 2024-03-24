@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -71,6 +72,7 @@
                                     <outlet property="bookAuthor" destination="iZR-Dg-gdU" id="DsD-Wu-74I"/>
                                     <outlet property="bookCover" destination="XGN-fK-nKB" id="9ou-L5-CWl"/>
                                     <outlet property="bookTitle" destination="N0i-zc-DcE" id="3kx-vX-AD3"/>
+                                    <segue destination="GSJ-bE-OAd" kind="showDetail" id="kPR-TQ-Bw0"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -86,6 +88,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yz-3t-euc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2490.8396946564885" y="21.83098591549296"/>
+        </scene>
+        <!--Book Details View Controller-->
+        <scene sceneID="f4c-0s-6Rb">
+            <objects>
+                <viewController id="GSJ-bE-OAd" customClass="BookDetailsViewController" customModule="Biblioteka" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UHN-hx-ljZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KZQ-hk-q9U">
+                                <rect key="frame" x="106.66666666666669" y="100" width="180" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="GTD-3a-Xtp"/>
+                                    <constraint firstAttribute="height" constant="260" id="ta0-Y2-c4d"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4i-DA-Mz4">
+                                <rect key="frame" x="25" y="380" width="343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Obg-ne-tIa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KZQ-hk-q9U" firstAttribute="centerX" secondItem="UHN-hx-ljZ" secondAttribute="centerX" id="3Tx-Fm-cBk"/>
+                            <constraint firstItem="x4i-DA-Mz4" firstAttribute="top" secondItem="KZQ-hk-q9U" secondAttribute="bottom" constant="20" id="5Wh-yV-CCl"/>
+                            <constraint firstItem="KZQ-hk-q9U" firstAttribute="top" secondItem="Obg-ne-tIa" secondAttribute="top" constant="100" id="QMh-K2-agY"/>
+                            <constraint firstItem="Obg-ne-tIa" firstAttribute="trailing" secondItem="x4i-DA-Mz4" secondAttribute="trailing" constant="25" id="fUK-mD-lNI"/>
+                            <constraint firstItem="x4i-DA-Mz4" firstAttribute="leading" secondItem="Obg-ne-tIa" secondAttribute="leading" constant="25" id="gPH-n9-FPL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookImageView" destination="KZQ-hk-q9U" id="d2M-Qv-Cra"/>
+                        <outlet property="deskcriptionLabel" destination="x4i-DA-Mz4" id="gsH-Yw-hh3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zja-jB-OkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3307.6335877862593" y="21.83098591549296"/>
         </scene>
     </scenes>
     <resources>
